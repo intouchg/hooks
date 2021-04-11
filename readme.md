@@ -13,3 +13,4 @@ React hooks library for the Intouch Design System
 * `useMeasure` / `useRafMeasure`
 * `useWindowSize` / `useRafWindowSize`
 * `useOutsideClickListener`
+* `useInternetListener`
