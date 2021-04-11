@@ -1,0 +1,61 @@
+{
+  "name": "@i/hooks",
+  "version": "0.0.1",
+  "description": "React hooks library for the Intouch Design System",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "repository": "https://intazdoweb.intouchsol.com/IntouchDesignSystem/IntouchDesignSystem/_git/hooks",
+  "author": "Intouch Group",
+  "license": "UNLICENSED",
+  "sideEffects": false,
+  "scripts": {
+    "prebuild": "rimraf dist && npm run typegen",
+    "build": "rollup -c",
+    "watch": "rollup -c -w",
+    "prepare": "npm run build",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false --strict --jsx react",
+    "typegen": "tsc",
+    "test": "echo tests are missing"
+  },
+  "dependencies": {
+    "@babel/runtime": "7.13.10"
+  },
+  "devDependencies": {
+    "@babel/core": "7.13.10",
+    "@babel/eslint-parser": "7.13.10",
+    "@babel/eslint-plugin": "7.13.10",
+    "@babel/plugin-transform-runtime": "7.13.10",
+    "@babel/preset-env": "7.13.10",
+    "@babel/preset-react": "7.12.13",
+    "@babel/preset-typescript": "7.13.0",
+    "@i/eslint-config": "latest",
+    "@rollup/plugin-babel": "5.3.0",
+    "@rollup/plugin-node-resolve": "11.2.0",
+    "@types/react": "17.0.3",
+    "@types/react-dom": "17.0.3",
+    "@typescript-eslint/eslint-plugin": "4.17.0",
+    "@typescript-eslint/parser": "4.17.0",
+    "babel-eslint": "10.1.0",
+    "babel-plugin-styled-components": "1.12.0",
+    "eslint": "7.21.0",
+    "eslint-plugin-react": "7.22.0",
+    "eslint-plugin-react-hooks": "4.2.0",
+    "react": "17.0.2",
+    "rimraf": "3.0.2",
+    "rollup": "2.41.1",
+    "rollup-plugin-eslint": "7.0.0",
+    "rollup-plugin-size-snapshot": "0.12.0",
+    "rollup-plugin-terser": "7.0.2",
+    "typescript": "4.2.3"
+  },
+  "peerDependencies": {
+    "react": ">=17.0.2",
+    "react-dom": ">=17.0.2",
+    "typescript": ">=4.2.3"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
+  }
+}
