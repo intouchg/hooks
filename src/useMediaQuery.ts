@@ -10,7 +10,7 @@ export const useMediaQuery = (query: string | (() => string)) => {
         media.addEventListener('change', setMatchedCallback)
 
         if (media.matches) {
-            setMatchedCallback(true)
+            setMatchedCallback(media)
         }
 
         return () => media.removeEventListener('change', setMatchedCallback)
