@@ -1,6 +1,7 @@
 export * from './useCookie'
 export * from './useInternetListener'
 export * from './useInView'
+export * from './useIsoLayoutEffect'
 export * from './useMeasure'
 export * from './useMediaQuery'
 export * from './useOutsideClickListener'
