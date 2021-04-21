@@ -1,10 +1,10 @@
-import { useEffect } from 'react'
+import { useLayoutEffect } from 'react'
 import { useRafState } from './useRafState'
 
 export const useRafWindowSize = () => {
     const [ size, setSize ] = useRafState({ width: 0, height: 0 })
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         const callback = () => setSize({ width: window.innerWidth, height: window.innerHeight })
         callback()
         window.addEventListener('resize', callback)
