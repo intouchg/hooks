@@ -6,11 +6,13 @@ React hooks library for the Intouch Design System
 
 ### Hooks
 
+* `useCookie`
+* `useInternetListener`
 * `useInView`
+* `useIsoLayoutEffect`
+* `useMeasure` / `useRafMeasure`
+* `useMediaQuery`
+* `useOutsideClickListener`
 * `usePrevious`
 * `useRafState`
-* `useIsMobile` / `useRafIsMobile`
-* `useMeasure` / `useRafMeasure`
 * `useWindowSize` / `useRafWindowSize`
-* `useOutsideClickListener`
-* `useInternetListener`
