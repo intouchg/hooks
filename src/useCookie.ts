@@ -19,5 +19,5 @@ export const useCookie = (key: string) => {
     return [
         cookie,
         setCookieCallback,
-    ]
+    ] as [ typeof cookie, typeof setCookieCallback ]
 }

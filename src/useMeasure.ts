@@ -11,5 +11,5 @@ export const useMeasure = <T extends HTMLElement>() => {
 		return resizeObserver.disconnect
 	}, [])
 
-	return [ ref, rect ]
+	return [ ref, rect ] as [ typeof ref, typeof rect ]
 }

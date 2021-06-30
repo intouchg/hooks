@@ -11,5 +11,5 @@ export const useInView = <T extends HTMLElement>(options: IntersectionObserverIn
 		return intersectionObserver.disconnect
 	}, [ options ])
 
-	return [ ref, inView ]
+	return [ ref, inView ] as [ typeof ref, typeof inView ]
 }
