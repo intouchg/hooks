@@ -8,7 +8,7 @@ export const useMeasure = <T extends HTMLElement>() => {
 		if (!ref.current) return
 		const resizeObserver = new ResizeObserver(([ entry ]) => setRect(entry.contentRect))
 		resizeObserver.observe(ref.current)
-		return resizeObserver.disconnect
+		return () => resizeObserver.disconnect()
 	}, [])
 
 	return [ ref, rect ] as [ typeof ref, typeof rect ]
