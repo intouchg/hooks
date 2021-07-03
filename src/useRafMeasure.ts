@@ -1,16 +1,17 @@
-import { useRef, useEffect } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { useRafState } from './useRafState'
 
-export const useRafMeasure = <T extends HTMLElement>() => {
-	const ref = useRef<T>(null)
+export const useRafMeasure = <T extends HTMLElement>(ref?: React.MutableRefObject<T>) => {
+	const defaultRef = useRef<T>(null)
+	const elementRef = ref || defaultRef
 	const [ rect, setRect ] = useRafState({ x: 0, y: 0, width: 0, height: 0, top: 0, right: 0, bottom: 0, left: 0 })
-	
-	useEffect(() => {
-		if (!ref.current) return
-		const resizeObserver = new ResizeObserver(([ entry ]) => setRect(entry.contentRect))
-		resizeObserver.observe(ref.current)
-		return resizeObserver.disconnect
-	}, [])
 
-	return [ ref, rect ] as [ typeof ref, typeof rect ]
+	useEffect(() => {
+		if (!elementRef.current) return
+		const resizeObserver = new ResizeObserver(([ entry ]) => setRect(entry.contentRect))
+		resizeObserver.observe(elementRef.current)
+		return resizeObserver.disconnect
+	}, [ elementRef ])
+
+	return [ elementRef, rect ] as [ typeof defaultRef, typeof rect ]
 }
