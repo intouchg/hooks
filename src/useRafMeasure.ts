@@ -10,8 +10,8 @@ export const useRafMeasure = <T extends HTMLElement>(ref?: React.MutableRefObjec
 		if (!elementRef.current) return
 		const resizeObserver = new ResizeObserver(([ entry ]) => setRect(entry.contentRect))
 		resizeObserver.observe(elementRef.current)
-		return resizeObserver.disconnect
-	}, [ elementRef ])
+		return () => resizeObserver.disconnect()
+	}, [ elementRef, setRect ])
 
 	return [ elementRef, rect ] as [ typeof defaultRef, typeof rect ]
 }

@@ -9,7 +9,7 @@ export const useInView = <T extends HTMLElement>(options: IntersectionObserverIn
 		if (!elementRef.current) return
 		const intersectionObserver = new IntersectionObserver(([ entry ]) => setInView(entry.isIntersecting), options)
 		intersectionObserver.observe(elementRef.current)
-		return intersectionObserver.disconnect
+		return () => intersectionObserver.disconnect()
 	}, [ elementRef, options ])
 
 	return [ elementRef, inView ] as [ typeof defaultRef, typeof inView ]
