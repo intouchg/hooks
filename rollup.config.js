@@ -36,8 +36,8 @@ export default [
         plugins: [
             resolve({ extensions }),
             babel(babelOptions),
-            terser(),
             sizeSnapshot(),
+            terser(),
         ],
     },
 ]
