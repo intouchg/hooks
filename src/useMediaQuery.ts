@@ -8,7 +8,7 @@ export const useMediaQuery = (query: string | (() => string)) => {
     useEffect(() => {
         const media = window.matchMedia(typeof query === 'string' ? `(min-width: ${query})` : query())
 
-        if (media.hasOwnProperty('addEventListener')) {
+        if ('addEventListener' in media) {
             media.addEventListener('change', setMatchedCallback)
         }
         else {
@@ -19,13 +19,13 @@ export const useMediaQuery = (query: string | (() => string)) => {
             setMatchedCallback(media)
         }
 
-        if (media.hasOwnProperty('addEventListener')) {
+        if ('addEventListener' in media) {
             return () => media.removeEventListener('change', setMatchedCallback)
         }
         else {
             return () => media.removeListener(setMatchedCallback)
         }
-    }, [ query ])
+    }, [ query, setMatchedCallback ])
 
     return matched
 }

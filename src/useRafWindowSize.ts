@@ -9,7 +9,7 @@ export const useRafWindowSize = () => {
         window.addEventListener('resize', callback)
         callback()
         return () => window.removeEventListener('resize', callback)
-    }, [])
+    }, [setSize])
 
     return size
 }

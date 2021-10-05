@@ -12,9 +12,9 @@ export const useCookie = (key: string) => {
     const setCookieCallback = useCallback((value, maxAgeSeconds?: number) => {
         document.cookie = `${key}=${JSON.stringify(value)}${maxAgeSeconds ? `;max-age=${maxAgeSeconds}` : ''}`
         setCookie(getCookie())
-    }, [ key ])
+    }, [ key, getCookie ])
 
-    useEffect(() => setCookie(getCookie()), [ key ])
+    useEffect(() => setCookie(getCookie()), [ key, getCookie ])
 
     return [
         cookie,

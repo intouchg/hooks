@@ -1,6 +1,6 @@
-# @i/hooks
+# @intouchg/hooks
 
-React hooks library for the Intouch Design System
+React hooks library for the [Intouch Design System](https://ids.intouchg.co/)
 <br>
 
 
@@ -16,3 +16,4 @@ React hooks library for the Intouch Design System
 * `usePrevious`
 * `useRafState`
 * `useWindowSize` / `useRafWindowSize`
+* `useScrollLock`
