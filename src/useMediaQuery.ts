@@ -6,7 +6,7 @@ export const useMediaQuery = (query: string | (() => string)) => {
     const setMatchedCallback = useCallback((event) => setMatched(event.matches), [])
 
     useEffect(() => {
-        const media = window.matchMedia(typeof query === 'string' ? `(min-width: ${query})` : query())
+        const media = window.matchMedia(typeof query === 'string' ? query : query())
 
         if ('addEventListener' in media) {
             media.addEventListener('change', setMatchedCallback)

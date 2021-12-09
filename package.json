@@ -1,6 +1,6 @@
 {
   "name": "@intouchg/hooks",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "React hooks library for the Intouch Design System",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
